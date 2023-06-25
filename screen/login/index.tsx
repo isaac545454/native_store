@@ -3,6 +3,7 @@ import * as S from "./style";
 import React from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import Text from "../../components/Text";
 
 export default function Login() {
   const handleLogin = () => {
@@ -12,8 +13,14 @@ export default function Login() {
   return (
     <View>
       <S.ContainerLogin>
+        <Text color="red">aaaaaaaaaaaa</Text>
         <Input />
-        <Button title="aaaaaaa" margin="8px" onPress={handleLogin} />
+        <Button
+          title="aaaaaaa"
+          margin="8px"
+          onPress={handleLogin}
+          color="white"
+        />
       </S.ContainerLogin>
     </View>
   );
