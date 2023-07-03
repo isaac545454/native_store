@@ -1,6 +1,7 @@
 import React from "react";
 import { TextProps as TextPropsNative } from "react-native";
 import * as S from "./style";
+import { Poppins_600SemiBold } from "@expo-google-fonts/poppins";
 
 interface TextProps extends TextPropsNative {
   color?: string;
@@ -16,6 +17,7 @@ export default function Text({ type, color, ...props }: TextProps) {
   return (
     <S.ContainerText
       size={handleSize[!type ? "DEFAULT" : type]}
+      style={{ fontFamily: "Poppins_600SemiBold" }}
       {...props}
       color={color}
     >
