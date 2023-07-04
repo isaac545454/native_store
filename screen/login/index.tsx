@@ -13,10 +13,9 @@ export default function Login() {
   return (
     <View>
       <S.ContainerLogin>
-        <Text color="red">aaaaaaaaaaaa</Text>
         <Input />
         <Button
-          title="aaaaaaa"
+          title="ENTRAR"
           margin="8px"
           onPress={handleLogin}
           color="white"

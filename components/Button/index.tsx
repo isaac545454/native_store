@@ -17,7 +17,7 @@ export default function Button({
 }: PropsButton) {
   return (
     <S.ContainerButton {...props} margin={margin}>
-      <Text color={color} type="TITLE">
+      <Text color={color} size="BUTTON" family="Bold">
         {title}
       </Text>
     </S.ContainerButton>

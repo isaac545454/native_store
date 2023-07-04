@@ -1,27 +1,34 @@
 import React from "react";
 import { TextProps as TextPropsNative } from "react-native";
 import * as S from "./style";
-import { Poppins_600SemiBold } from "@expo-google-fonts/poppins";
 
 interface TextProps extends TextPropsNative {
   color?: string;
-  type?: "DEFAULT" | "TITLE";
+  size?: "DEFAULT" | "TITLE" | "PARAGRAPH" | "SUBTITLE" | "BUTTON";
+  family?: "Bold" | "regular" | "ligth";
 }
 
-export default function Text({ type, color, ...props }: TextProps) {
+export default function Text({ family, size, color, ...props }: TextProps) {
   const handleSize = {
-    TITLE: "32px",
+    TITLE: "24px",
+    SUBTITLE: "20px",
+    PARAGRAPH: "14px",
+    BUTTON: "18px",
     DEFAULT: "16px",
+  };
+
+  const fonts = {
+    Bold: "Poppins_600SemiBold",
+    regular: "Poppins_400Regular",
+    ligth: "Poppins_200ExtraLight",
   };
 
   return (
     <S.ContainerText
-      size={handleSize[!type ? "DEFAULT" : type]}
-      style={{ fontFamily: "Poppins_600SemiBold" }}
+      size={handleSize[!size ? "TITLE" : size]}
+      style={{ fontFamily: fonts[!family ? "regular" : family] }}
       {...props}
       color={color}
-    >
-      index
-    </S.ContainerText>
+    ></S.ContainerText>
   );
 }
